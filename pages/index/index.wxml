@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="len">密码长度：<input model:value="{{len}}" type="number" /></view>
+  <view class="len">密码长度：<input model:value="{{len}}" type="number" maxlength="2" /></view>
   <view class="num">是否包含数字：
     <switch model:checked="{{hasNumbers}}" />
   </view>
