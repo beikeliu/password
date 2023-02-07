@@ -1,0 +1,32 @@
+/**index.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.password {
+  margin-top: 100rpx;
+  align-self: center;
+  font-size: 56rpx;
+}
+
+.len input {
+  display: inline-block;
+  width: 250rpx;
+  vertical-align: text-top;
+}
+
+image {
+  margin-top: 100rpx;
+  align-self: center;
+  width: 100rpx;
+}
+
+.len,.num,.sym {
+  font-size: 36rpx;
+  padding: 10rpx 0;
+}
+
+.copy,.docs {
+  margin: 20rpx 0;
+}
