@@ -4,10 +4,12 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "密码生成器",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "本地密码生成器",
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle"
   },
+  "darkmode": true,
+  "themeLocation":"theme.json",
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

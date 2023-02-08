@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="len">密码长度：<input model:value="{{len}}" type="number" maxlength="2" /></view>
+  <view class="len">密码长度：<input value="{{len}}" type="number" bindinput="onLen" /></view>
   <view class="num">是否包含数字：
     <switch model:checked="{{hasNumbers}}" />
   </view>
@@ -9,6 +9,5 @@
   </view>
   <view class="password">{{password}}</view>
   <button class="copy" bindtap="copy" type="primary">复制</button>
-  <button class="docs" bindtap="toDocs">腾讯文档</button>
-  <image src="../../icon/refresh.png" mode="widthFix" bindtap="generate"></image>
+  <image src="{{reIcon}}" mode="widthFix" bindtap="refresh"></image>
 </view>

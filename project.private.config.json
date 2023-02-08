@@ -3,5 +3,6 @@
   "projectname": "miniprogram-1",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "libVersion": "2.30.0"
 }
