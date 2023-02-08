@@ -11,16 +11,15 @@ Page({
   },
   onLoad() {
     this.generate();
-    wx.onThemeChange(({ theme }) => {
-      if (theme === "light") {
-        this.setData({
-          reIcon: "../../icon/refresh.png"
-        })
-      } else {
-        this.setData({
-          reIcon: "../../icon/refresh1.png"
-        })
+    const self = this;
+    wx.getSystemInfoAsync({
+      success(info){
+        const {theme} = info
+        self.changeIcon(theme)
       }
+    })
+    wx.onThemeChange(({ theme }) => {
+      self.changeIcon(theme)
     })
   },
   onLen(event) {
@@ -55,5 +54,16 @@ Page({
     wx.setClipboardData({
       data: this.data.password,
     })
+  },
+  changeIcon(theme) {
+    if (theme === "light") {
+      this.setData({
+        reIcon: "../../icon/refresh.png"
+      })
+    } else {
+      this.setData({
+        reIcon: "../../icon/refresh1.png"
+      })
+    }
   }
 })
