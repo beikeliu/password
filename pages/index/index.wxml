@@ -1,10 +1,16 @@
 <!--index.wxml-->
 <view class="container">
   <view class="len">密码长度：<input value="{{len}}" type="number" bindinput="onLen" /></view>
-  <view class="num">是否包含数字：
+  <view class="low-alpha">允许小写字母：
+    <switch model:checked="{{hasLowAlpha}}" />
+  </view>
+  <view class="cap-alpha">允许大写字母：
+    <switch model:checked="{{hasCapAlpha}}" />
+  </view>
+  <view class="num">允许阿拉伯数字：
     <switch model:checked="{{hasNumbers}}" />
   </view>
-  <view class="sym">是否包含符号：
+  <view class="sym">允许特殊符号：
     <switch model:checked="{{hasSymbols}}" />
   </view>
   <view class="password">{{password}}</view>

@@ -1,18 +1,19 @@
 // createPassword.js
 const alpha = 'qwertyuiopasdfghjklzxcvbnm'
-const numbers = '0123456789'
-const symbols = '!@#$%^&*_-=+'
+const numbers = '01234567890123456789'
+const symbols = '!@#$%^&*_-=+!@#$%^&*_-=+'
 
 
-const createPassword = (length = 8, hasNumbers = true, hasSymbols = true) => {
-  let chars = alpha
+const createPassword = (length, hasNumbers, hasSymbols, hasLowAlpha, hasCapAlpha) => {
+  let chars = ''
+  let password = ''
+  hasLowAlpha ? (chars += alpha) : ''
+  hasCapAlpha ? (chars += alpha.toUpperCase()) : ''
   hasNumbers ? (chars += numbers) : ''
   hasSymbols ? (chars += symbols) : ''
-  return generatePassword(length, chars)
-}
-
-const generatePassword = (length, chars) => {
-  let password = ''
+  if (!hasNumbers && !hasSymbols && !hasLowAlpha && !hasCapAlpha) {
+    return ''
+  }
   for (let i = 0; i < length; i++) {
     password += chars.charAt(Math.floor(Math.random() * chars.length))
   }

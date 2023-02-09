@@ -4,9 +4,11 @@ const createPassword = require("../../utils/createPassword")
 Page({
   data: {
     password: undefined,
-    len: 8,
+    len: 12,
     hasNumbers: true,
     hasSymbols: true,
+    hasLowAlpha: true,
+    hasCapAlpha: true,
     reIcon: "../../icon/refresh.png"
   },
   onLoad() {
@@ -47,7 +49,7 @@ Page({
   },
   generate() {
     this.setData({
-      password: createPassword(this.data.len, this.data.hasNumbers, this.data.hasSymbols)
+      password: createPassword(this.data.len, this.data.hasNumbers, this.data.hasSymbols, this.data.hasLowAlpha, this.data.hasCapAlpha)
     })
   },
   copy() {
