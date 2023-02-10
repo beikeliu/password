@@ -13,15 +13,14 @@ Page({
   },
   onLoad() {
     this.generate();
-    const self = this;
     wx.getSystemInfoAsync({
-      success(info){
+      success: (info) => {
         const {theme} = info
-        self.changeIcon(theme)
+        this.changeIcon(theme)
       }
     })
     wx.onThemeChange(({ theme }) => {
-      self.changeIcon(theme)
+      this.changeIcon(theme)
     })
   },
   onLen(event) {
