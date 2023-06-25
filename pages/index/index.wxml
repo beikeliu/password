@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="len">密码长度：<input value="{{len}}" type="number" bindinput="onLen" /></view>
+  <view class="len">密码长度：
+    <slider class="slider" min="4" max="18" value="{{len}}" show-value bindchange="onLen"	/>
+  </view>
   <view class="low-alpha">允许小写字母：
     <switch model:checked="{{hasLowAlpha}}" />
   </view>

@@ -4,9 +4,9 @@ const createPassword = require("../../utils/createPassword")
 Page({
   data: {
     password: undefined,
-    len: 12,
+    len: 8,
     hasNumbers: true,
-    hasSymbols: true,
+    hasSymbols: false,
     hasLowAlpha: true,
     hasCapAlpha: true,
     reIcon: "../../icon/refresh.png"
@@ -24,21 +24,9 @@ Page({
     })
   },
   onLen(event) {
-    const {
-      detail
-    } = event;
-    const {
-      value
-    } = detail;
-    if (value < 18) {
-      this.setData({
-        len: value
-      })
-    } else {
-      this.setData({
-        len: 18
-      })
-    }
+    this.setData({
+      len: event.detail.value
+    })
   },
   refresh() {
     wx.vibrateShort({

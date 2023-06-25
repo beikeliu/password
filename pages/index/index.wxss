@@ -32,3 +32,8 @@ image {
 .copy,.docs {
   margin: 20rpx 0;
 }
+
+.slider {
+  display: inline-block;
+  width: 400rpx;
+}
